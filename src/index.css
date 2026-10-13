@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --color-accent: #00e676;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background: #0a0f14;
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@keyframes pulse-led {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.led-pulse {
+  animation: pulse-led 1.5s ease-in-out infinite;
+}
+
+@keyframes glow-green {
+  0%, 100% { box-shadow: 0 0 8px 0 rgba(0, 230, 118, 0.6); }
+  50% { box-shadow: 0 0 20px 2px rgba(0, 230, 118, 0.8); }
+}
+
+@keyframes glow-red {
+  0%, 100% { box-shadow: 0 0 8px 0 rgba(239, 68, 68, 0.6); }
+  50% { box-shadow: 0 0 20px 2px rgba(239, 68, 68, 0.8); }
+}
+
+.glow-green { animation: glow-green 2s ease-in-out infinite; }
+.glow-red { animation: glow-red 2s ease-in-out infinite; }
+
+.panel-card {
+  background: linear-gradient(135deg, #131c26 0%, #0f161e 100%);
+  border: 1px solid #1e2d3d;
+  border-radius: 14px;
+}
+
+.panel-card-hover:hover {
+  border-color: #2a4a5e;
+  transition: border-color 0.2s ease;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0f14; }
+::-webkit-scrollbar-thumb { background: #1e2d3d; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2a4a5e; }
